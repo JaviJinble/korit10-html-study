@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-a {
+            width: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: content-box;
+            /* 기본값 */
+        }
+
+        .box-b {
+            width: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 
+box-a의 실제 보이는 너비: 250px
+계산 과정: 200 + 20 + 20 + 5 + 5 = 250
+box-b의 실제 보이는 너비: 200px
+계산 과정: width 200 안에 padding과 border가 포함됨
+더 직관적인 것: border-box
+이유: 보이는 최종 너비가 width 값과 같아서 레이아웃 계산이 쉽다. -->
+
+</body>
+
+</html>
