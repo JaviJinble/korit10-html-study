@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제23</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td  {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            padding: 12px;
+        }
+        td {
+            padding: 10px;
+        }
+        .right {
+            text-align: right;
+        }
+        tfoot td {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>수량</th>
+            <th>합계</th>
+        </tr>
+        <tr>
+            <td>노트북</td>
+            <td class="right">1,200,000</td>
+            <td>1</td>
+            <td class="right">1,200,000</td>
+        </tr>
+        <tr>
+            <td>마우스</td>
+            <td class="right">35,000</td>
+            <td>2</td>
+            <td class="right">70,000</td>
+        </tr>
+        <tr>
+            <td>키보드</td>
+            <td class="right">55,000</td>
+            <td>1</td>
+            <td class="right">55,000</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td class="right">총합: 1,325,000</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

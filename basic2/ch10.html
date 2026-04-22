@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{
+        text-decoration: none;
+    }
+
+    a:link {
+        color: rgb(0, 115, 115);
+    }
+
+    a:visited {
+        color: red;
+    }
+
+    .btn {
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 2.5px;
+        padding: 1px 7px;
+        font-size: 13.3333px;
+        background-color: #eee;
+        color: black;
+        cursor: default;
+    }
+
+    .btn:hover {
+        border: 1px solid #555;
+        background-color: #ddd;
+    }
+
+    .btn:active {
+        border: 1px solid #aaa;
+        background-color: #fefefe;
+    }
+
+    .btn:disabled {
+        border: 1px solid #ddd;
+        background-color: #be0000;
+        color: #666;
+    }
+</style>
+
+<body>
+    <div>
+        <a class="btn" href="http://naver.com">확인</a>
+        <button class="btn" disabled>확인</button>
+        <div class="btn">확인</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미미지</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url("./images/bg2.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            margin: 0px auto;
+            box-sizing: border-box;
+            width: 1200px;
+            height: 600px;
+            background: #8ce356;
+            background: linear-gradient(90deg, rgba(140, 227, 86, 1) 27%, rgba(84, 234, 102, 1) 59%, rgba(237, 221, 83, 1) 100%);
+            overflow: hidden;
+        }
+
+        .profile-image {
+            margin: 50px auto;
+            box-sizing: border-box;
+            border: 1px solid #dbdbdb;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 10px 5px #00000044;
+            background-image: url("images/default_profile.webp");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-image"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>문제24</title>
+    <style>
+        .form {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        input[type=date],
+        textarea {
+            width: 100%; 
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+        input[type=submit] {
+            background-color: #ea580c;
+            color: white;
+            padding: 12px 0;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    </style>
+    </head>
+    <body>
+        <form action="#" method="post" class="form">
+            <div>
+                <label>이름</label>
+                <input type="text" name="name">
+            </div>
+
+            <div>
+                <label>이메일</label>
+                <input type="email" name="email">
+            </div>
+
+            <div>
+                <label>비밀번호</label>
+                <input type="password" name="password">
+            </div>
+
+            <div>
+                <label>생년월일</label>
+                <input type="date" name="birth">
+            </div>
+
+            <div>
+                <label>성별</label>
+                <input type="radio" name="gender" value="male"> 남
+                <input type="radio" name="gender" value="female"> 여
+            </div>
+
+            <div>
+                <label>관심분야</label>
+                <input type="checkbox" name="interest" value="Java"> Java
+                <input type="checkbox" name="interest" value="Python"> Python
+                <input type="checkbox" name="interest" value="JavaScript"> JavaScript
+            </div>
+
+            <div>
+                <label>자기소개</label>
+                <textarea name="intro" rows="5" cols="40"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="가입하기">
+            </div>
+        </form>
+    </body>
+</html>
