@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 클래스 선언
+    class Student {
+
+        constructor() {
+            // 객체가 생성될 때마다 실행되는 생성자
+            console.log("생성자 호출!!!");
+        }
+    }
+
+    // new 키워드로 객체 생성 (인스턴스 생성)
+    const s1 = new Student(); // 생성자 실행
+    const s2 = new Student(); // 생성자 실행 (서로 다른 객체)
+
+    // typeof로 타입 확인
+    console.log(typeof s1); 
+    // "object" → class로 만든 것도 객체임
+
+    // 객체 비교 (값이 아닌 주소 비교)
+    console.log(s1 === s2);
+    // false → 서로 다른 객체이기 때문에 주소가 다름
+
+    // 객체 리터럴 방식으로 객체 생성
+    const s3 = {};
+    const s4 = {};
+
+    console.log(typeof s3);
+    // "object"
+
+    console.log(s3 === s4);
+    // false → 내용이 같아도 주소가 다르면 다른 객체
+
+    // 객체에 속성 추가 (동적 추가 가능)
+    s1.name = "김준일";
+    console.log(s1.name); // "김준일"
+
+    // 값 변경 (덮어쓰기)
+    s1.name = "김준이";
+    console.log(s1.name); // "김준이"
+
+    // 다른 객체에도 동일하게 속성 추가 가능
+    s3.name = "김준일";
+    console.log(s3.name); // "김준일"
+
+    // 대괄호 표기법으로 속성 추가
+    s2["name"] = "김준삼"; 
+
+    // 점 표기법으로 접근
+    console.log(s2.name);      // "김준삼"
+
+    // 대괄호 표기법으로 접근
+    console.log(s2["name"]);   // "김준삼"
+
+    // 변수에 키를 담아서 접근
+    const key = "name";
+    console.log(s1[key]); 
+    // "김준이" → s1["name"]과 동일
+    const datas = {
+        names: ["김명준", "김명규"],
+        ages: [29, 28, ],
+        a : () => {
+            console.log(datas.names);
+            console.log(datas.ages);
+        }
+    }
+
+    console.log(datas["names"][0]);
+    datas.a();
+
+    const datas2 = datas; // 얕은 복사; 주소값만 복사
+    console.log(datas === datas2);
+    const datas3 = {...datas};
+    console.log(datas === datas3);
+</script>
+</body>
+</html>
