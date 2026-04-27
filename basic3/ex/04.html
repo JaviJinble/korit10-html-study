@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = 20;
+        const hasTicket = true;
+
+
+        const test1 = () => console.log(age >= 18 && hasTicket ? "입장 가능" : "");
+        
+        const test2 = () => console.log(age < 18 || !hasTicket ? "입장 불가능" : "");
+        
+        const test3 = () => console.log(!hasTicket ? "티켓이 없다." : "");
+
+
+
+        test1();
+        test2();
+        test3();
+
+        console.log();
+    </script>
+</body>
+</html>

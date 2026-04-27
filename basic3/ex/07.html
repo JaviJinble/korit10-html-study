@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 단축 평가 (short-circuit evaluation) 논리 계산법
+        // 이게 작동하는 이유는, A && B 연산자를 사용하게 될 때에는 
+        // A 가 Truthy 한 값이라면, B 가 결과값이 됩니다. 반면, A 가 Falsy 한 값이라면 결과는 A 가 됩니다.
+        // A || B 는 만약 A 가 Truthy 할경우 결과는 A 가 됩니다. 반면, A 가 Falsy 하다면 결과는 B 가 됩니다.
+        console.log(0 || "기본값");       // 결과: 기본값
+        console.log("" || "대체값");      // 결과: 대체값
+        console.log("사용자" && "환영합니다"); // 결과: 환영합니다.
+        console.log(null && "출력됨");    // 결과: null   A 가 Falsy 한 값이라면 결과는 A 가 된다.
+
+        console.log(typeof[]);
+    </script>
+</body>
+
+</html>
