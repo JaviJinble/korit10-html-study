@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html,
-        body {
+        html, body {
             margin: 0;
             height: 100vh;
         }
@@ -28,7 +26,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
             box-sizing: border-box;
             box-shadow: 0 0 5px #00000044;
             padding: 20px;
@@ -45,8 +42,7 @@
             height: 50px;
             overflow: hidden;
 
-            /* & > label은 부모 요소 */
-            &>label {
+            & > label {
                 transition: all 0.3s ease-in-out;
                 transform: translateY(-50%);
                 position: absolute;
@@ -55,10 +51,9 @@
                 background-color: transparent;
                 font-size: 14px;
                 color: #444;
-
             }
 
-            &>input {
+            & > input {
                 transition: all 0.3s ease-in-out;
                 position: relative;
                 z-index: 10;
@@ -69,8 +64,6 @@
                 background-color: #00000000;
             }
         }
-
-
 
         .input-is-Not-empty {
             &>label {
@@ -89,7 +82,7 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
-            border: 1px solid dbdbdb;
+            border: 1px solid #dbdbdb;
             border-radius: 4px;
             width: 100%;
             height: 40px;
@@ -104,29 +97,15 @@
             &:active {
                 background-color: #003e65;
             }
+
         }
 
-        .user-table {
-            box-sizing: border-box;
-            border-collapse: collapse;
-            border: 1px solid #dbdbdb;
-            border-radius: 4px;
-            width: 500px;
-            overflow: hidden;
-
-            & th,
-            & td {
-                box-sizing: border-box;
-                border: 1px solid #dbdbdb;
-                padding: 5px 10px;
-            }
-        }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="card">
+
             <div class="input-box">
                 <input type="text" id="un" name="username">
                 <label for="un">사용자 이름</label>
@@ -135,36 +114,17 @@
                 <input type="password" id="pw" name="password">
                 <label for="pw">비밀번호</label>
             </div>
+            
             <button class="register-button">사용자 정보 등록</button>
         </div>
-        <div class="card">
-            <table class="user-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>사용자 이름</th>
-                        <th>비밀번호</th>
-                        <th>삭제</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
     </div>
-
     <script>
-        const registerButton = document.querySelector(".register-button");
-
-
         let userList = [];
 
-        // 클로저 예제 - currentId는 함수 안에 있는 지역변수인데, 반환된 내부 함수가 계속 기억
         function autoIncrement() {
             let currentId = 0;
 
-            return function () {
+            return function() {
                 currentId++;
                 return currentId;
             }
@@ -172,66 +132,33 @@
 
         const getNextId = autoIncrement();
 
-
-        // .input-box 클래스를 가진 요소들을 전부 가져와.
         const inputBoxs = document.querySelectorAll(".input-box");
 
-        for (let inputBox of inputBoxs) {
-            const inputElement = inputBox.querySelector("input")
+        for(let inputBox of inputBoxs) {
+            const inputElement = inputBox.querySelector("input");
 
-            inputElement.onfocus = (event) => {
-                inputBox.classList.add("input-is-Not-empty")
+            inputElement.onfocus = (e) => {
+                inputBox.classList.add("input-is-Not-empty");
             }
 
-            inputElement.onblur = (event) => {
-                if (!event.target.value) {
-                    inputBox.classList.remove("input-is-Not-empty")
+            inputElement.onblur = (e) => {
+                if (!e.target.value) {
+                    inputBox.classList.remove("input-is-Not-empty");
                 }
             }
         }
 
+        const registerButton = document.querySelector(".register-button");
 
-
-        // registerButton.addEventListener("click", () => {
-        //     // input 태그만 배열로 만들기
-        //     // inputBoxs는 바로 배열이 아니라 NodeList라서 Array.from()으로 배열
-        //     const inputs = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
-
-        //     // 새 사용자 객체 생성
-        //     let newUser = {
-        //         id: getNextId(),
-        //     };
-
-        //     inputs.forEach(element => {
-        //         // input의 name과 value 추출 - 구조 분해 할당
-        //         const { name, value } = element;
-
-        //         newUser = {
-        //             ...newUser,
-        //             [name]: value,
-        //         };
-        //     });
-
-        //     userList = [
-        //         ...userList,
-        //         newUser,
-        //     ];
-
-        //     console.log(userList);
-        // });
         registerButton.onclick = () => {
-            // input 태그만 배열로 만들기
-            // inputBoxs는 바로 배열이 아니라 NodeList라서 Array.from()으로 배열
-            const inputs = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
+            const input = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
 
-            // 새 사용자 객체 생성
             let newUser = {
                 id: getNextId(),
-            };
+            }
 
-            inputs.forEach(element => {
-                // input의 name과 value 추출 - 구조 분해 할당
-                const { name, value } = element;
+            inputs.array.forEach(element => {
+                const {name, value} = element;
 
                 newUser = {
                     ...newUser,
@@ -245,30 +172,7 @@
             ];
 
             console.log(userList);
-
-            tableRender();
         };
-
-        function handleDeleteOnclick(id) {
-            userList = userList.filter(user => user.id !== id);
-            tableRender();
-        }
-
-        function tableRender() {
-            const tbody = document.querySelector(".user-table > tbody");
-            tbody.innerHTML = userList.map(user => `
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.password}</td>   
-                <td><button onclick = handleDeleteOnclick(${user.id}) >X<button></td>   
-            </tr>
-            `).join("");
-        }
-
-        
-
     </script>
 </body>
-
 </html>
