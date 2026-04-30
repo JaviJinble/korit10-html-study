@@ -24,12 +24,14 @@
 
         function requestStudentData() {
             let studentList = [
-                {id: 1, name: "김준일"},
-                {id: 2, name: "김준이"},
-                {id: 3, name: "김준삼"},
-                {id: 4, name: "김준사"},
+                {id: 1, name: "김명준"},
+                {id: 2, name: "김명규"},
+                {id: 3, name: "김민성"},
+                {id: 4, name: "김명명"},
             ];
 
+            // studentList에 checked: false, 속성 추가
+            // Spread 정의
             tableRowData = studentList.map(s => ({
                 ...s,
                 checked: false,
